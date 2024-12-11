@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkMode Navigation with Local Storage</title>
+</head>
+<body>
+
+    <style>
+
+body {
+         display: flex;
+         justify-content: center;
+         font-family: 'Nunito', sans-serif;
+     }
+
+        .white body{
+            background-color: #f0f2fa;
+        }
+        .white nav {
+            background-color: rosybrown;
+        }
+        .white nav a{
+            color: #1e202a;
+        }
+    
+     .dark {
+        background-color: #1f212e;
+    }
+    
+    .dark a{
+        color: #f0f2fa;
+    }
+    .dark button{
+        background-color: #f0f2fa;
+        color: #1f212e;
+    }
+    .dark{
+        color: #f0f2fa;
+    }    
+     
+     nav {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 30px;
+     }
+    
+     nav a{
+        text-decoration: none;
+        color: black;
+        
+     }
+    
+     .fas {
+         cursor: pointer;
+         background-color: #1e202a;
+        height: 40px;
+        color: white;
+        margin-left: 2%;
+     }
+     </style> 
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Service</a>
+        <a href="#">Session</a>
+        <a href="#">About US</a>
+        </nav>
+
+    <button id="btn" class="fas">Click me</button>
+
+    <script>
+        const darkBtn = document.querySelector('.fas');
+const body = document.querySelector('body');
+
+const darkMode = () => {
+    body.classList.toggle('dark')
+}
+
+darkBtn.addEventListener('click', () => {
+    setDarkMode = localStorage.getItem('dark');
+
+    if(setDarkMode !== "on") {
+        darkMode();
+
+        setDarkMode = localStorage.setItem('dark', 'on');
+    } else {
+        darkMode();
+        
+        setDarkMode = localStorage.setItem('dark', 'off');
+    }
+});
+
+
+let setDarkMode = localStorage.getItem('dark');
+
+
+if(setDarkMode === 'on') {
+    darkMode();
+}
+    </script>
+</body>
+</html>

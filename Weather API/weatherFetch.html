@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Abel&family=Anek+Telugu:wght@100&family=Anton&family=Bebas+Neue&family=Bungee+Spice&family=Comfortaa:wght@500&family=Josefin+Sans&family=Montserrat:wght@100;200;300&family=Noto+Nastaliq+Urdu&family=Oswald:wght@400;600&family=PT+Sans+Narrow:wght@400;700&family=Rajdhani:wght@300&family=Raleway:wght@300&family=Roboto:wght@300&family=Rubik+Mono+One&family=Rubik:wght@300&family=Satisfy&display=swap');
+        body{
+            height: 100vh;
+            margin: 0px;
+            padding: 0px;
+            background-image: url(pink.jpg );
+            background-size: cover;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Josefin Sans', sans-serif;
+            color: #fff;
+        }
+        .container{
+            height: 400px;
+            width: 450px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+            padding-top: 2%;
+        }
+        input{
+            height: 36px;
+            width: 200px;
+            border: 5px solid white;
+            outline: 0;
+            border-radius: 50px 0px 0px 50px;
+            /*border-bottom: 1px solid rgb(228,226,226);*/
+            background-color: transparent;
+            font-size: large;
+            color: #fff;
+            padding-left: 4%;
+            
+        }
+        input::placeholder{
+            color: rgb(219, 214, 214);
+            font-weight: lighter;
+        }
+        button{
+            border: none;
+            cursor: pointer;
+            color: rgb(252, 165, 179);
+            font-size: large;
+            height: 48px;
+            border-radius: 0px 50px 50px 0px;
+            width: 80px;
+            background-color: #fff;
+            position: relative;
+            right: 8px;
+            
+        }
+        button:hover{
+            color: rgb(115, 115, 207);
+        }
+        .row{
+            display: flex;
+            padding-left: 165px;
+            padding-right: 165px;
+            margin-top: 3%;
+        }
+        hr{
+            height: 30px;
+            background-color: transparent;
+        }
+        .row p{
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            margin-top: 10%;
+        }
+        h2{
+            font-size: 50px;
+            margin: 30px 0px 20px 0px;
+        }
+        h1{
+            font-size: 70px;
+            margin: 0;
+        }
+        p{
+            margin: 0;
+            margin-top: 1%;
+        }
+        
+    </style>
+    <div class="container">
+        <input id="input" type="text" placeholder="Enter Your City Name">
+        <button id="btn">Search</button>
+        <div class="child"></div>
+    </div>
+
+    <script>
+       async function fetchWeather(){
+
+        const inputValue = document.getElementById('input').value;
+    
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=63a3827c0f16a98f9783f1050655d56f`;
+            const responce = await fetch(url);
+            const json = await responce.json();
+            const data = json;
+            
+
+            const container = document.getElementsByClassName('container')[0];
+            const child = document.getElementsByClassName('child')[0];
+            console.log(json);
+            child.innerHTML=`
+            <h2> ${data.name} </h2>
+            <p> ${data.weather[0].main} </p>
+            <p> ${data.weather[0].description} </p>
+
+            <img src ="https://openweathermap.org/img/w/${data.weather[0].icon}.png">
+            <h1> ${data.main.temp}° </h1>
+            <div class="row">
+            <div class="min">
+                <p> Min </p> 
+                ${data.main.temp_min}
+            </div>
+            <hr>
+            <div>
+                <p> Max </p> 
+
+                 ${data.main.temp_max} 
+            </div>
+        </div>
+                `
+        }
+
+       function toggle(){
+        fetchWeather();
+        }
+            const btn= document.getElementById("btn");
+            btn.addEventListener("click",toggle)
+        
+    </script>
+</body>
+</html>

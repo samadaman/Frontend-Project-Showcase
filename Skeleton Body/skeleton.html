@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skeleton Body fetch</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+    </style>
+
+    <div class="container gap-2 d-flex">
+      <div class="card" style="width: 18rem" aria-hidden="true">
+        <img
+          src="https://th.bing.com/th/id/OIP.xo-BCC1ZKFpLL65D93eHcgHaGe?w=220&h=192&c=7&r=0&o=5&pid=1.7"
+          height="270"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title placeholder-glow">
+            <span class="placeholder col-6"></span>
+          </h5>
+          <p class="card-text placeholder-glow">
+            <span class="placeholder col-7"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-6"></span>
+            <span class="placeholder col-8"></span>
+          </p>
+          <a
+            href="#"
+            tabindex="-1"
+            class="btn btn-primary disabled placeholder col-6"
+          ></a>
+        </div>
+      </div>
+
+      <!-- second card -->
+      <div class="card" style="width: 18rem" aria-hidden="true">
+        <img
+          src="https://th.bing.com/th/id/OIP.xo-BCC1ZKFpLL65D93eHcgHaGe?w=220&h=192&c=7&r=0&o=5&pid=1.7"
+          height="270"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title placeholder-glow">
+            <span class="placeholder col-6"></span>
+          </h5>
+          <p class="card-text placeholder-glow">
+            <span class="placeholder col-7"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-6"></span>
+            <span class="placeholder col-8"></span>
+          </p>
+          <a
+            href="#"
+            tabindex="-1"
+            class="btn btn-primary disabled placeholder col-6"
+          ></a>
+        </div>
+      </div>
+
+      <!-- third card -->
+      <div class="card" style="width: 18rem" aria-hidden="true">
+        <img
+          src="https://th.bing.com/th/id/OIP.xo-BCC1ZKFpLL65D93eHcgHaGe?w=220&h=192&c=7&r=0&o=5&pid=1.7"
+          height="270"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title placeholder-glow">
+            <span class="placeholder col-6"></span>
+          </h5>
+          <p class="card-text placeholder-glow">
+            <span class="placeholder col-7"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-6"></span>
+            <span class="placeholder col-8"></span>
+          </p>
+          <a
+            href="#"
+            tabindex="-1"
+            class="btn btn-primary disabled placeholder col-6"
+          ></a>
+        </div>
+      </div>
+
+      <!-- forth card -->
+      <div class="card" style="width: 18rem" aria-hidden="true">
+        <img
+          src="https://th.bing.com/th/id/OIP.xo-BCC1ZKFpLL65D93eHcgHaGe?w=220&h=192&c=7&r=0&o=5&pid=1.7"
+          height="270"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title placeholder-glow">
+            <span class="placeholder col-6"></span>
+          </h5>
+          <p class="card-text placeholder-glow">
+            <span class="placeholder col-7"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-4"></span>
+            <span class="placeholder col-6"></span>
+            <span class="placeholder col-8"></span>
+          </p>
+          <a
+            href="#"
+            tabindex="-1"
+            class="btn btn-primary disabled placeholder col-6"
+          ></a>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // async function fetchData() {
+
+      //     const url = 'https://dummyjson.com/users';
+      //     const responce = await fetch(url);
+      //     const json = await responce.json();
+      //     return json;
+      //     console.log(json)
+      //   }
+
+      //   async function renderData() {
+      //     const fetch = await fetchData();
+
+      //     let html = "";
+
+      //     fetch.map((data) => {
+      //       html += `
+
+      //       <h3> ${json.users[0].id} </h3>
+
+      //         `;
+      //     });
+
+      //     const container = document.getElementsByClassName("container")[0];
+
+      //     container.innerHTML = html;
+      //   }
+
+      //   renderData();
+
+      async function placeHolder() {
+        const url = "https://dummyjson.com/users";
+        const responce = await fetch(url);
+        const json = await responce.json();
+        console.log(json);
+
+        const container = document.getElementsByClassName("container")[0];
+        container.innerHTML = `
+     <div class="card" style="width:18rem;">
+  <img src="${json.users[0].image}.png">
+
+  <div class="card-body">
+    <h5 class="card-title fw-bold">${json.users[0].firstName} ${json.users[0].lastName}</h5>
+    <p class="card-text fw-semibold m-0">${json.users[0].email} , ${json.users[0].gender} </p>
+    <p class="card-text fw-semibold p-0 m-0"> ${json.users[0].maidenName} , ${json.users[0].address.city} </p>
+    <p class="card-text fw-semibold p-0"> ${json.users[0].university} , ${json.users[0].address.city}  </p>
+    <a href="#" class="btn btn-primary">Show Profile</a>
+  </div>
+</div>
+
+<div class="card" style="width:18rem;">
+  <img src="${json.users[1].image}.png">
+
+  <div class="card-body">
+    <h5 class="card-title fw-bold">${json.users[1].firstName} ${json.users[1].lastName}</h5>
+    <p class="card-text fw-semibold m-0">${json.users[1].email} , ${json.users[1].gender} </p>
+    
+    <p class="card-text fw-semibold p-0"> ${json.users[1].university} , ${json.users[1].address.city} ${json.users[1].address.state}  </p>
+    <a href="#" class="btn btn-primary">Show Profile</a>
+  </div>
+</div>
+
+<div class="card" style="width:18rem;">
+  <img src="${json.users[2].image}.png">
+
+  <div class="card-body">
+    <h5 class="card-title fw-bold">${json.users[2].firstName} ${json.users[2].lastName}</h5>
+    <p class="card-text fw-semibold m-0">${json.users[2].email} , ${json.users[2].gender} </p>
+    <p class="card-text fw-semibold p-0 m-0"> ${json.users[2].maidenName} , ${json.users[2].address.city} </p>
+    <p class="card-text fw-semibold p-0"> ${json.users[2].university} </p>
+    <a href="#" class="btn btn-primary">Show Profile</a>
+  </div>
+</div>
+
+<div class="card" style="width:18rem;">
+  <img src="${json.users[3].image}.png">
+
+  <div class="card-body">
+    <h5 class="card-title fw-bold">${json.users[3].firstName} ${json.users[3].lastName}</h5>
+    <p class="card-text fw-semibold m-0">${json.users[3].email}  ${json.users[3].maidenName}</p>
+        <p class="card-text fw-semibold pb-3 m-0"> ${json.users[3].university} ${json.users[3].address.city} </p>
+        <a href="#" class="btn btn-primary">Show Profile</a>
+  </div>
+</div>
+
+        `;
+      }
+      placeHolder();
+    </script>
+  </body>
+</html>
